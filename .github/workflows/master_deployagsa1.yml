@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'contactdatabaseapp497743'
+          app-name: 'deployagsa1'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9F0403D6030744CF902D4FDC5870C440 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9B7124E71B8B40438E0FC8AC9EEDBF14 }}
