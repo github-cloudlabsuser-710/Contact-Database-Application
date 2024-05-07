@@ -26,7 +26,9 @@ jobs:
         run: nuget restore
 
       - name: Publish to folder
-        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\" /p:ProjectDir="D:\a\Contact-Database-Application\CRUD application 2.csproj"
+        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\" /p:Configuration=Release /p:Platform="Any CPU" /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:PublishUrl="$(Build.ArtifactStagingDirectory)\WebApp"
+        working-directory: 'path/to/solution/directory'
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
